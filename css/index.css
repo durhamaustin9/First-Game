@@ -1,0 +1,51 @@
+* {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+html  {
+  height: 100vh;
+  min-height: 640px;
+  width: 100vw;
+  min-width: 360px;
+}
+
+title {
+display: none;
+}
+
+body  {
+  height: 100vh;
+  min-height: 640px;
+  width: 100vw;
+  min-width: 360px;
+}
+
+.gameStage {
+  height: 500px;
+  width: 1000px;
+  overflow: scroll;
+  position: absolute;
+}
+
+.mainBodyBackground {
+  position: absolute;
+  height: 500px;
+  width: 1000px;
+  background-image: url('../media/images/background.png');
+  background-size: auto 372px;
+  z-index: -1;
+}
+
+.mainBodyGround {
+  position: absolute;
+  height: 128px;
+  width: 150%;
+  background-image: url('../media/images/ground.png');
+  background-size: auto 128px;
+  background-repeat: repeat;
+  bottom: 0;
+  z-index: 1;
+  left: -1%;
+}
