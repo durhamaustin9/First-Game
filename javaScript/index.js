@@ -12,58 +12,55 @@ $(document).ready(function () {
       ground.classList.add('mainBodyGround');
       document.getElementById('mainBody').appendChild(ground);
 
+      let ground2 = document.createElement('div');
+      ground2.id = 'ground2';
+      ground2.classList.add('mainBodyGround2');
+      document.getElementById('mainBody').appendChild(ground2);
+
       frameCreation();
     });  //End of $(gameStage).ready
 
+    // If the first frame is showing then this value will be true, When its
+    // time to go to the next one we flip flop this boolean
+    var firstFrame = true;
+
     function frameCreation() {
-      // console.log($('#ground').css('left'));
-      // $('#ground').css('left', -(i * 10) + '%');
 
-      // var elem = document.getElementById("myBar");
-      // var width = 1;
-      // var id = setInterval(frame, 10);
-      // function frame() {
-      //   if (width >= 100) {
-      //     clearInterval(id);
-      //   } else {
-      //     width++;
-      //     elem.style.width = width + '%';
-      //   }
-      // }
+      var gameWidth = 1000;
+      var height = 500;
+      var left_range = 0;
 
-      var elem2 = document.getElementById('ground1');
-      var left = 10;
+      var elem = document.getElementById('ground1');
+      var left = 0;
+      var elem2 = document.getElementById('ground2');
+      var left2 = 1000;
+
       setInterval(function(){
-        left++;
-        elem2.style.left = - left + 'px';
+        left_range++;
 
-        if(left > ($('.mainBodyGround').innerWidth())){
-          console.log("The frame has gone past " + left);
+        if(left_range >= gameWidth)  {
+          left_range = 0;
+
+          if(firstFrame){
+            elem.style.left = gameWidth + 'px';
+            left = gameWidth;
+          }else{
+            elem2.style.left = gameWidth + 'px';
+            left2 = gameWidth;
+          }
+          firstFrame = !firstFrame;
+        } else {
+          left--;
+          elem.style.left = left + 'px';
+
+          left2--;
+          elem2.style.left = left2 + 'px';
         }
+
+
       }, 1);
-      // setInterval(myMethod, 5000);
-      //
-      // function myMethod() {
-      //   console.log($('#ground').css('left'));
-      // }
-
-
-
-
-
 
     }
 
-    $('.gameStage').ready(function () {
-      // var elem3 = document.getElementById('ground1');
-      var elem4 = $('#ground1').css('left');
-      // var elem4 = elem3.style.left;
-      var test = -50;
-
-      console.log(elem4);
-
-
-
-    });
-  })  //End of $(window).ready
+  }); //End of $(window).ready
 }); //End of $(document).ready
