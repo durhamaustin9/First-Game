@@ -23,27 +23,27 @@ body  {
 }
 
 .gameStage {
-  height: 500px;
-  width: 1000px;
+  height: 640px;
+  width: 480px;
   overflow: hidden;
   position: absolute;
 }
 
 .mainBodyBackground {
   position: absolute;
-  height: 500px;
-  width: 1000px;
+  height: 560px;
+  width: 480px;
   background-image: url('../media/images/background.png');
-  background-size: auto 372px;
+  background-size: 480px 560px;
   z-index: -1;
 }
 
 .mainBodyGround {
   position: absolute;
-  height: 128px;
+  height: 80px;
   width: 1000px;
   background-image: url('../media/images/ground.png');
-  background-size: 35.7px 128px;
+  background-size: auto 80px;
   background-repeat: repeat;
   bottom: 0;
   z-index: 1;
@@ -51,12 +51,20 @@ body  {
 
 .mainBodyGround2  {
   position: absolute;
-  height: 128px;
+  height: 80px;
   width: 1000px;
   background-image: url('../media/images/ground.png');
-  background-size: 35.7px 128px;
+  background-size: auto 80px;
   background-repeat: repeat;
   bottom: 0;
   z-index: 1;
   left: 1500px;
+}
+
+.pipeStructure  {
+  height: 494px;
+  width: 86px;
+  position: absolute;
+  background-image: url('../media/images/pipe.png');
+  background-size: 86px 494px;
 }

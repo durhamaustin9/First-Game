@@ -35,13 +35,16 @@ $(document).ready(function () {
       var elem2 = document.getElementById('ground2');
       var left2 = 1000;
 
-      setInterval(function(){
+      var elem3 = document.getElementById('pipe1');
+      var left3 = 138;
+
+      setInterval(function()  {
         left_range++;
 
         if(left_range >= gameWidth)  {
           left_range = 0;
 
-          if(firstFrame){
+          if(firstFrame)  {
             elem.style.left = gameWidth + 'px';
             left = gameWidth;
           }else{
@@ -55,6 +58,32 @@ $(document).ready(function () {
 
           left2--;
           elem2.style.left = left2 + 'px';
+
+          left3--;
+          elem3.style.left = left3 + 'px';
+        }
+
+        if (left === -1)  {
+
+          var marginTop = Math.floor(Math.random() * 420) + 166;
+
+          console.log(marginTop);
+
+
+
+          let pipe1 = document.createElement('div');
+          pipe1.id = 'pipe1';
+          pipe1.classList.add('pipeStructure');
+          pipe1.style.left = 140 + 'px';
+          pipe1.style.marginTop = (Math.floor(Math.random() * 420) + 166) + 'px';
+          document.getElementById('mainBody').appendChild(pipe1);
+
+          let pipe2 = document.createElement('div');
+          pipe2.id = 'pipe2';
+          pipe2.classList.add('pipeStructure');
+          pipe2.style.left = 420 + 'px';
+          pipe2.style.marginTop = (Math.floor(Math.random() * 420) + 166) + 'px';
+          document.getElementById('mainBody').appendChild(pipe2);
         }
 
 
