@@ -61,10 +61,19 @@ body  {
   left: 1500px;
 }
 
-.pipeStructure  {
+.bottomPipeStructure  {
   height: 494px;
   width: 86px;
   position: absolute;
   background-image: url('../media/images/pipe.png');
   background-size: 86px 494px;
+}
+
+.topPipeStructure {
+  height: 494px;
+  width: 86px;
+  position: absolute;
+  background-image: url('../media/images/pipe.png');
+  background-size: 86px 494px;
+  transform: rotate(180deg);
 }
