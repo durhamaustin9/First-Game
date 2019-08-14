@@ -22,8 +22,46 @@ $(document).ready(function () {
       document.getElementById('mainBody').appendChild(bird3);
 
       setInterval(function () {
+        var frame1 = document.getElementById('birdFrame1').style.display;
+        var frame2 = document.getElementById('birdFrame2').style.display;
+        var frame3 = document.getElementById('birdFrame3').style.display;
 
-      }, 1)
+        if (frame1 === 'block') {
+          document.getElementById('birdFrame1').style.display = 'none';
+
+          document.getElementById('birdFrame2').style.display = 'block';
+        }
+
+        if (frame2 === 'block') {
+          document.getElementById('birdFrame2').style.display = 'none';
+
+          document.getElementById('birdFrame3').style.display = 'block';
+        }
+
+        if (frame3 === 'block') {
+          document.getElementById('birdFrame3').style.display = 'none';
+
+          document.getElementById('birdFrame1').style.display = 'block';
+        }
+      }, 160);
+
+      document.body.onkeyup = function(e) {
+        if(e.keyCode === 32)  {
+          document.getElementById('birdFrame1').style.transform = 'rotate(-20deg)';
+
+          document.getElementById('birdFrame2').style.transform = 'rotate(-20deg)';
+
+          document.getElementById('birdFrame3').style.transform = 'rotate(-20deg)';
+
+          var elem2 = document.getElementById('birdFrame2').style.marginTop;
+
+          console.log(elem2);
+
+          // document.getElementById('birdFrame1').style.marginTop = (elem3 - 50) + 'px';
+          // document.getElementById('birdFrame2').style.marginTop = (elem3 - 50) + 'px';
+          // document.getElementById('birdFrame3').style.marginTop = (elem3 - 50) + 'px';
+        }
+      }
     })
   })
 });
