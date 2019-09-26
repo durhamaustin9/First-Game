@@ -85,7 +85,6 @@ body  {
   background-image: url('../media/images/bird.png');
   background-size: 194px 45px;
   top: 50%;
-  margin-top: -22.5px;
   left: 50%;
   margin-left: -32.5px;
 }
@@ -97,3 +96,4 @@ body  {
 #birdFrame3 {
   /*margin-top: 100px;*/
 }
+
